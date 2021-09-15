@@ -1,24 +1,35 @@
-import logo from "./logo.svg";
-import "./App.css";
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
+import React from "react";
+import Container from "react-bootstrap/Container";
+import { Card } from "react-bootstrap";
+
+import "./App.css";
 
 function App() {
-  const todos = [
+  const [todos, setTodos] = React.useState([
     { id: 1, text: "Clean house", done: false },
     { id: 2, text: "Whash dishes ", done: false },
     { id: 3, text: "Walk the dog", done: false },
     { id: 4, text: "Visit USA", done: false },
-  ];
+  ]);
 
   return (
-    <div className="App">
-      <h1>Todo List</h1>
+    <Container className="p-3">
+      <Card>
+        <Card.Header>React APP</Card.Header>
+        <Card.Body>
+          <Card.Title>Todo List</Card.Title>
 
-      <TodoList todos={todos} />
+          <TodoList todos={todos} setTodos={setTodos} />
 
-      <AddTodo />
-    </div>
+          <AddTodo setTodos={setTodos} />
+
+          <Card.Text></Card.Text>
+          {/* <Button variant="primary">Go somewhere</Button> */}
+        </Card.Body>
+      </Card>
+    </Container>
   );
 }
 

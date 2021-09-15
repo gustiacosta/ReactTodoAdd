@@ -1,18 +1,28 @@
-import React, { Component } from "react";
+import DeleteTodo from "./DeleteTodo";
 
-class TodoList extends Component {
-  render() {
-    const todoArr = this.props;
-    return (
-      <ul>
-        {todoArr.todos.map((todo) => (
-          <li key={todo.id}>
-            {todo.id} - {todo.text}
-          </li>
-        ))}
-      </ul>
+function TodoList({ todos, setTodos }) {
+  function handleToggleTodo(todo) {
+    const updatedTodos = todos.map((t) =>
+      t.id === todo.id ? { ...t, done: !t.done } : t
     );
+
+    setTodos(updatedTodos);
   }
+
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <li
+          onDoubleClick={() => handleToggleTodo(todo)}
+          key={todo.id}
+          style={{ textDecoration: todo.done ? "line-through" : "" }}
+        >
+          {todo.id} - {todo.text}
+          <DeleteTodo todo={todo} setTodos={setTodos} />
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default TodoList;
