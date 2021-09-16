@@ -6,6 +6,9 @@ import { Card } from "react-bootstrap";
 
 import "./App.css";
 
+// Tutorial
+// https://www.freecodecamp.org/news/react-tutorial-build-a-project/
+
 function App() {
   const [todos, setTodos] = React.useState([
     { id: 1, text: "Clean house", done: false },
