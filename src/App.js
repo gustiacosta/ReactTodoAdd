@@ -15,6 +15,7 @@ function App() {
     { id: 2, text: "Whash dishes ", done: false },
     { id: 3, text: "Walk the dog", done: false },
     { id: 4, text: "Visit USA", done: false },
+    { id: 5, text: "learn React", done: false },
   ]);
 
   return (
