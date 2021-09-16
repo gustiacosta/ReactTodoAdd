@@ -17,7 +17,7 @@ function App() {
   return (
     <Container className="p-3">
       <Card>
-        <Card.Header>React APP</Card.Header>
+        <Card.Header>TODO List App</Card.Header>
         <Card.Body>
           <Card.Title>Todo List</Card.Title>
 
